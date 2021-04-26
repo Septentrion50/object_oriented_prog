@@ -2,28 +2,18 @@ require 'pry'
 
 # a user
 class User
-  attr_writer :mastercard
-  attr_reader :birth_date
-  attr_accessor :email
+  attr_accessor :email, :age
 
-  @@user_count = 0
+  @@all = []
 
-  def initialize(email_to_save)
+  def initialize(email_to_save, age)
     @email = email_to_save
-    puts 'On envoie un email de bienvenue !'
-    @@user_count += 1
+    @age = age
+    @@all << self
   end
 
-  def self.count
-    return @@user_count
-  end
-
-  def greet
-    puts 'Bonjour, monde !'
-  end
-
-  def say_hello_to_someone(first_name)
-    puts "Bonjour, #{first_name} !"
+  def self.all
+    return @@all
   end
 
   def show_itself
@@ -39,12 +29,12 @@ class User
     return @email
   end
 
-  def read_mastercard
-    return @mastercard
+  def update_age(age_to_update)
+    @age = age_to_update
   end
 
-  def update_birthdate(birthdate_to_update)
-    @birth_date = birthdate_to_update
+  def read_age
+    return @age
   end
 
   private
@@ -54,5 +44,4 @@ class User
   end
 end
 
-binding.pry
 puts 'end of file'
