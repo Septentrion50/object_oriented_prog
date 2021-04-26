@@ -5,6 +5,7 @@ class User
   attr_writer :mastercard
   attr_reader :birth_date
   attr_accessor :email
+
   @@user_count = 0
 
   def initialize(email_to_save)
@@ -44,6 +45,12 @@ class User
 
   def update_birthdate(birthdate_to_update)
     @birth_date = birthdate_to_update
+  end
+
+  private
+
+  def check_email(email)
+    email.match?(/(.+)@(.+)\.([a-z]+)/)
   end
 end
 
