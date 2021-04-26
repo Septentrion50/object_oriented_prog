@@ -32,4 +32,11 @@ describe 'Check the validity and correct working of the User class' do
       expect(test[3].email).to eq('michel@email.com')
     end
   end
+
+  describe 'Find user by email' do
+    it 'Use the class method find_by_email' do
+      veronique = User.new('veronique@email.com', 40)
+      expect(User.find_by_email('veronique@email.com')).to eq(veronique)
+    end
+  end
 end

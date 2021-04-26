@@ -16,6 +16,14 @@ class User
     return @@all
   end
 
+  def self.find_by_email(email)
+    @@all.each do |u|
+      if email == u.email
+        return u
+      end
+    end
+  end
+
   def show_itself
     print "Voici l'instance : "
     puts self

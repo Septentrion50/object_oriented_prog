@@ -76,6 +76,12 @@ class Event
     false
   end
 
+  def send_reminder
+    if is_soon?
+      puts "sending a reminder to #{@attendees.join(' ')}"
+    end
+  end
+
   def to_s
     puts "Titre : #{@title}"
     puts "Date de début : #{@start_date.strftime('%Y-%m-%d %H:%M')}"
