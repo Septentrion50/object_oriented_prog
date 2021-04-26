@@ -54,7 +54,7 @@ class Event
   end
 
   def is_past?
-    return true if (@start_date <=> @now) == 1
+    return true if (@start_date <=> @now) == -1
 
     false
   end
