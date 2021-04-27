@@ -89,6 +89,22 @@ class Event
     puts "Invités : #{@attendees.join(' ')}"
   end
 
+  def age_analysis
+    age_array = []
+    average = 0
+
+    @attendees.each do |a|
+      age_array << a.age
+      average += a.age
+    end
+
+    average /= @attendees.length
+
+    puts 'Voici les ages des participants :'
+    puts age_array.join(', ')
+    puts "La moyenne d'age est de #{average} ans"
+  end
+
   private
 
   def check_date_format(date)

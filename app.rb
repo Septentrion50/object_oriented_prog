@@ -56,6 +56,9 @@ class EventCreator
   end
 end
 
-my_event = EventCreator.new
+julie = User.new('julie@gmail.com', 32)
+jean = User.new('jean@jean.com', 25)
 
-EventCreator.all_events
+brunch = Event.new('2021-05-05 11:00', 60, 'brunch', [julie, jean])
+
+brunch.age_analysis
